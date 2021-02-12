@@ -13,9 +13,17 @@ class Paddle(Turtle):
         self.color("white")
         self.penup()
 
+    def second_paddle(self):
+        """Creates a another paddle """
+        self.goto(x=-350, y=0)
+        self.shapesize(stretch_wid=5, stretch_len=1)
+        self.shape("square")
+        self.color("white")
+        self.penup()
+
     def move_upwards(self):
         """Move Paddle Upward Direction"""
-        new_y_coordinate = self.ycor() + 20
+        new_y_coordinate = self.ycor() + 20  # return a y_coordinate and add 20 in it
         self.goto(self.xcor(), new_y_coordinate)
 
     def move_downwards(self):
