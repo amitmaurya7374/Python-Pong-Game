@@ -18,7 +18,8 @@ screen.listen()
 
 
 def move_paddle(key1, key2, function1, function2):
-    """Move paddle when key pressed\n This is a high order function => passing function as argument inside another
+    """Move paddle when key pressed.\n
+    This is a high order function => passing function as argument inside another
     function """
     screen.onkey(key=key1, fun=function1)
     screen.onkey(key=key2, fun=function2)
