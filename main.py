@@ -1,6 +1,8 @@
 """In This project we will created pong game."""
+import time
 from turtle import Screen
 
+from ball import Ball
 from paddle import Paddle
 
 # Screen setup
@@ -13,6 +15,8 @@ screen.tracer(0)  # turning off a screen animation
 right_paddle = Paddle(paddle_position=(350, 0))
 
 left_paddle = Paddle(paddle_position=(-350, 0))  # created second paddle for second player
+
+ball = Ball()
 
 screen.listen()
 
@@ -31,6 +35,7 @@ move_paddle(key1="Left", key2="Right", function1=left_paddle.move_upwards, funct
 is_game_on = True
 
 while is_game_on:
+    time.sleep(0.1)  # To see a ball we have to slow down our while loop
     screen.update()
-
+    ball.move()
 screen.exitonclick()
