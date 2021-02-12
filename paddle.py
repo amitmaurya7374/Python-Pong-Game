@@ -5,9 +5,9 @@ from turtle import Turtle
 class Paddle(Turtle):
     """This class will create a paddle """
 
-    def __init__(self):
+    def __init__(self, paddle_position):
         super().__init__()
-        self.goto(x=350, y=0)
+        self.goto(paddle_position)
         self.shapesize(stretch_wid=5, stretch_len=1)
         self.shape("square")
         self.color("white")
