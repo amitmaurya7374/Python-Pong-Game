@@ -12,3 +12,13 @@ class Paddle(Turtle):
         self.shape("square")
         self.color("white")
         self.penup()
+
+    def move_upwards(self):
+        """Move Paddle Upward Direction"""
+        new_y_coordinate = self.ycor() + 20
+        self.goto(self.xcor(), new_y_coordinate)
+
+    def move_downwards(self):
+        """Move Paddle Downward Direction"""
+        new_y_coordinate = self.ycor() - 20
+        self.goto(self.xcor(), new_y_coordinate)
