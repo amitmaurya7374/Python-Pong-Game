@@ -29,3 +29,8 @@ class Ball(Turtle):
     def bounce_x(self):
         """This finction will move a ball into x direction """
         self.x_move *= -1
+
+    def reset_ball_position(self):
+        """This function will reset position of a ball"""
+        self.goto(x=0, y=0)
+        self.bounce_x()

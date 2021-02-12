@@ -4,6 +4,7 @@ from turtle import Screen
 
 from ball import Ball
 from paddle import Paddle
+from score import Score
 
 # Screen setup
 screen = Screen()  # created an object
@@ -17,6 +18,7 @@ right_paddle = Paddle(paddle_position=(350, 0))
 left_paddle = Paddle(paddle_position=(-350, 0))  # created second paddle for second player
 
 ball = Ball()
+score = Score()
 
 screen.listen()
 
@@ -51,5 +53,10 @@ while is_game_on:
     screen.update()
     ball.move()
     bouncing_ball()
-
+    if ball.xcor() > 380:
+        ball.reset_ball_position()
+        score.update_score(position="right")
+    elif ball.xcor() < -380:
+        ball.reset_ball_position()
+        score.update_score(position="left")
 screen.exitonclick()
