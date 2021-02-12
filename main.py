@@ -30,16 +30,26 @@ def move_paddle(key1, key2, function1, function2):
 
 
 move_paddle(key1="Up", key2="Down", function1=right_paddle.move_upwards, function2=right_paddle.move_downwards)
-move_paddle(key1="Left", key2="Right", function1=left_paddle.move_upwards, function2=left_paddle.move_downwards)
+move_paddle(key1="w", key2="s", function1=left_paddle.move_upwards, function2=left_paddle.move_downwards)
 
 is_game_on = True
+
+
+def bouncing_ball():
+    """control a ball collision with paddle"""
+    # Detect collision with wall
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce_y()
+    # Detect collision with paddle
+    if ball.distance(right_paddle) < 50 and ball.xcor() > 320 or ball.distance(
+            left_paddle) < 50 and ball.xcor() < -320:
+        ball.bounce_x()
+
 
 while is_game_on:
     time.sleep(0.1)  # To see a ball we have to slow down our while loop
     screen.update()
     ball.move()
-    # Detect collision with wall
-    if ball.ycor() > 280 or ball.ycor() < -280:
-        ball.bounce()
+    bouncing_ball()
 
 screen.exitonclick()

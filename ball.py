@@ -22,7 +22,10 @@ class Ball(Turtle):
         y_coordinate = self.ycor() + self.y_move
         self.goto(x_coordinate, y_coordinate)
 
-    def bounce(self):
-        """This function help a ball to bounce"""
+    def bounce_y(self):
+        """This function help a ball to bounce in y direction"""
         self.y_move *= -1
 
+    def bounce_x(self):
+        """This finction will move a ball into x direction """
+        self.x_move *= -1
