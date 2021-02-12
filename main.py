@@ -38,4 +38,8 @@ while is_game_on:
     time.sleep(0.1)  # To see a ball we have to slow down our while loop
     screen.update()
     ball.move()
+    # Detect collision with wall
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce()
+
 screen.exitonclick()
